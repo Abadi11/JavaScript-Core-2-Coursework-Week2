@@ -152,6 +152,18 @@ body {
   background: #87ca8a;
 }
 
+/* My style*/
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+li {
+  width: calc(25% - 51px);
+  margin: 15px;
+  padding: 10px;
+  min-width: 350px;
+}
 @media screen and (min-width: 992px) {
   .navbar-brand > img {
     max-height: 80px;
