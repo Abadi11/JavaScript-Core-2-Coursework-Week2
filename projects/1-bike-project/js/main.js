@@ -45,4 +45,36 @@ function orangeBtn(){
 
  // ----------------- Part #2 --------------
 
+ // Email
+ // declare form, email, text, and describe yourself
+ const formEl = document.querySelector("form");
+ const emailEl = document.getElementById("exampleInputEmail1");
+  const textEl = document.getElementById("example-text-input");
+  const describeYourselfEl = document.getElementById("exampleTextarea");
+
+  // add event listener
+ formEl.addEventListener("submit", submitForm);
+
+ // set the function of add event listener
+ function submitForm(e){
+  e.preventDefault();
+  if (emailEl.value.length === 0 || !emailEl.value.includes("@")){
+   emailEl.style.backgroundColor = "red";
+  }else {
+   emailEl.style.borderColor = "green"
+  }
+ 
+  if (textEl.value.length === 0){
+   textEl.style.backgroundColor = "red";
+  }else{
+   textEl.style.borderColor = "green"
+  }
+  
+  if(describeYourselfEl.value.length === 0){
+   describeYourselfEl.style.backgroundColor = "red";
+  }else{
+   describeYourselfEl.style.borderColor = "green"
+   alert("Thank you for filling out the form")
+  }
+  }
  

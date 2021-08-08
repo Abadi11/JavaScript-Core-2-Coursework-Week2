@@ -7,7 +7,7 @@ function highlightWords(paragraph, colours) {
   // option for none
   const optionNone = document.createElement("option");
   optionNone.innerText = "Select a Colour";
-  optionNone.value = "transparent";
+  optionNone.value = "white";
   selectEl.appendChild(optionNone);
   contentId.appendChild(selectEl);
   colours.forEach(colour => {
