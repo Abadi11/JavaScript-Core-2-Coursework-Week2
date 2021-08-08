@@ -33,7 +33,7 @@ function listOfColours(colours) {
   selectEl.addEventListener("change", changeColour);
     function changeColour (){
       let chooseColor = document.querySelector("select").value;
-        paragraph.style.color = chooseColor;
+      paragraph.style.color = chooseColor;
       alert("You have selected: " + chooseColor);
     }
   
