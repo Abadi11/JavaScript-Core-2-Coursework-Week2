@@ -1,5 +1,5 @@
 function populateTodoList(todos) {
-  let list = document.getElementById("todo-list");
+  const list = document.getElementById("todo-list");
   // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
   todos.forEach((todo) => {
     // create li with its stuff
@@ -19,19 +19,27 @@ function populateTodoList(todos) {
     iEl2.className = "fa fa-trash";
     iEl2.setAttribute("aria-hidden", true);
 
+    
+
     // append child to all elements
     spanEl.appendChild(iEl1);
     spanEl.appendChild(iEl2);
     liEl.appendChild(spanEl);
     list.appendChild(liEl);
-
+    
     // The first `<i>` tag that applies a line-through text-decoration styling
   iEl1.addEventListener("click", function(){
+    todo.completed = true;
+    /*
     if (liEl.style.textDecoration === "line-through"){
       liEl.style.textDecoration = "none";
     }else{
       liEl.style.textDecoration = "line-through";
     };
+    */
+    if(todo.completed){
+      liEl.style.textDecoration = "line-through";
+    } 
   });
 
   // The second `<i>` tag that deletes the parent `<li>` element from the `<ul>`.
@@ -41,6 +49,7 @@ function populateTodoList(todos) {
   
   });
 
+  
 
   
 
@@ -72,6 +81,29 @@ console.log(todos);
 
 populateTodoList(todos);
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
+
+// create a delete completed button in the end of list
+
 function deleteAllCompletedTodos() {
   // Write your code here...
+  const contentOfList = document.querySelector(".col-sm");
+  const deleteCompletedBtn = document.createElement("button");
+  deleteCompletedBtn.innerText = "Delete Completed Task";
+  deleteCompletedBtn.className = "btn btn-primary mb-3";
+  contentOfList.appendChild(deleteCompletedBtn)
+
+  //
+
+  
+
+  deleteCompletedBtn.addEventListener("click", () => {
+    list = document.querySelectorAll("li .list-group-item")
+    list.forEach((li) => {
+      if (li.style.textDecoration === "line-through"){
+      li.delete();
+    }
+    })
+    
+  })
 }
+deleteAllCompletedTodos()
