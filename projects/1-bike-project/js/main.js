@@ -58,19 +58,11 @@ function orangeBtn(){
  // set the function of add event listener
  function submitForm(e){
   e.preventDefault();
-  if (emailEl.value.length === 0 || !emailEl.value.includes("@")){
+  if (emailEl.value.length === 0 && !emailEl.value.includes("@")){
    emailEl.style.backgroundColor = "red";
-  }else {
-   emailEl.style.borderColor = "green"
-  }
- 
-  if (textEl.value.length === 0){
+  }else if (textEl.value.length === 0){
    textEl.style.backgroundColor = "red";
-  }else{
-   textEl.style.borderColor = "green"
-  }
-  
-  if(describeYourselfEl.value.length === 0){
+  }else if(describeYourselfEl.value.length === 0){
    describeYourselfEl.style.backgroundColor = "red";
   }else{
    describeYourselfEl.style.borderColor = "green"
