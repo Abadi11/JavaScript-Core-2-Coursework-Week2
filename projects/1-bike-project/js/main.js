@@ -58,13 +58,30 @@ function orangeBtn(){
  // set the function of add event listener
  function submitForm(e){
   e.preventDefault();
+  let flag1 = false;
+  let flag2 = false; 
+  let flag3 = false;
+
   if (emailEl.value.length === 0 && !emailEl.value.includes("@")){
    emailEl.style.backgroundColor = "red";
-  }else if (textEl.value.length === 0){
-   textEl.style.backgroundColor = "red";
-  }else if(describeYourselfEl.value.length === 0){
-   describeYourselfEl.style.backgroundColor = "red";
+   flag1 = false;
   }else{
+    flag1 = true;
+  }
+  if (textEl.value.length === 0){
+   textEl.style.backgroundColor = "red";
+   flag2 = false;
+  }else{
+    flag2 = true;
+  } 
+  if(describeYourselfEl.value.length === 0){
+   describeYourselfEl.style.backgroundColor = "red";
+   flag3 = false;
+  }else{
+    flag3 = true;
+  }
+  
+  if (flag1 && flag2 && flag3){
    describeYourselfEl.style.borderColor = "green"
    alert("Thank you for filling out the form")
   }
