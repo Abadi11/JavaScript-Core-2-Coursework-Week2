@@ -32,6 +32,7 @@ function createTodoList(todo){
     deletedBtn.className = "fa fa-trash";
     deletedBtn.setAttribute("aria-hidden", true);
     deletedBtn.dataset.task = todo.task;
+    //console.log(deletedBtn.dataset)
     deletedBtn.addEventListener("click", handleDeletedBtn);
     
 
